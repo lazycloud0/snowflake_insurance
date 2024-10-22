@@ -28,51 +28,51 @@ Fact Table: Claims_Fact
 
 Dimension Tables:
 
-    - Policy_Dimension
-        - Columns:
-            - Policy_ID (Primary Key)
-            - Policy_Number
-            - Start_Date
-            - End_Date
-            - Premium_Amount
-            - Coverage_Type_ID (Foreign Key)
+    Policy_Dimension
+        Columns:
+            Policy_ID (Primary Key)
+            Policy_Number
+            Start_Date
+            End_Date
+            Premium_Amount
+            Coverage_Type_ID (Foreign Key)
 
-    - Coverage_Type_Dimension
-        - Columns:
-            - Coverage_Type_ID (Primary Key)
-            - Coverage_Description (e.g., Accident Only, Comprehensive)
+    Coverage_Type_Dimension
+        Columns:
+            Coverage_Type_ID (Primary Key)
+            Coverage_Description (e.g., Accident Only, Comprehensive)
 
-    - Pet_Dimension
-        - Columns:
-            - Pet_ID (Primary Key)
-            - Pet_Name
-            - Pet_Type (e.g., Dog, Cat)
-            - Breed
-            - Age
-            - Owner_ID (Foreign Key)
+    Pet_Dimension
+        Columns:
+            Pet_ID (Primary Key)
+            Pet_Name
+            Pet_Type (e.g., Dog, Cat)
+            Breed
+            Age
+            Owner_ID (Foreign Key)
 
-    - Owner_Dimension
-        - Columns:
-            - Owner_ID (Primary Key)
-            - Owner_Name
-            - Contact_Info
-            - Address_ID (Foreign Key)
+    Owner_Dimension
+        Columns:
+            Owner_ID (Primary Key)
+            Owner_Name
+            Contact_Info
+            Address_ID (Foreign Key)
 
-    - Address_Dimension
-        - Columns:
-            - Address_ID (Primary Key)
-            - Street
-            - City
-            - State
-            - Zip_Code
+    Address_Dimension
+        Columns:
+            Address_ID (Primary Key)
+            Street
+            City
+            State
+            Zip_Code
 
-    - Date_Dimension
-        - Columns:
-            - Date_ID (Primary Key)
-            - Date
-            - Month
-            - Year
-            - Day_of_Week
+    Date_Dimension
+        Columns:
+            Date_ID (Primary Key)
+            Date
+            Month
+            Year
+            Day_of_Week
 
 4. Establish Relationships
 
@@ -84,72 +84,74 @@ Dimension Tables:
 
 ## Claims_Fact
 
-| Claim_ID |
-| Policy_ID (FK) |
-| Date_ID (FK) |
-| Amount_Claimed |
-| Amount_Paid |
-| Claim_Status |
+```
+    | Claim_ID |
+    | Policy_ID (FK) |
+    | Date_ID (FK) |
+    | Amount_Claimed |
+    | Amount_Paid |
+    | Claim_Status |
 
----
+    ---
 
-## Policy_Dimension
+    ## Policy_Dimension
 
-| Policy_ID |
-| Policy_Number |
-| Start_Date |
-| End_Date |
-| Premium_Amount |
-| Coverage_Type_ID (FK) |
+    | Policy_ID |
+    | Policy_Number |
+    | Start_Date |
+    | End_Date |
+    | Premium_Amount |
+    | Coverage_Type_ID (FK) |
 
----
+    ---
 
-## Coverage_Type_Dimension
+    ## Coverage_Type_Dimension
 
-| Coverage_Type_ID |
-| Coverage_Description |
+    | Coverage_Type_ID |
+    | Coverage_Description |
 
----
+    ---
 
-## Pet_Dimension
+    ## Pet_Dimension
 
-| Pet_ID |
-| Pet_Name |
-| Pet_Type |
-| Breed |
-| Age |
-| Owner_ID (FK) |
+    | Pet_ID |
+    | Pet_Name |
+    | Pet_Type |
+    | Breed |
+    | Age |
+    | Owner_ID (FK) |
 
----
+    ---
 
-## Owner_Dimension
+    ## Owner_Dimension
 
-| Owner_ID |
-| Owner_Name |
-| Contact_Info |
-| Address_ID (FK) |
+    | Owner_ID |
+    | Owner_Name |
+    | Contact_Info |
+    | Address_ID (FK) |
 
----
+    ---
 
-## Address_Dimension
+    ## Address_Dimension
 
-| Address_ID |
-| Street |
-| City |
-| State |
-| Zip_Code |
+    | Address_ID |
+    | Street |
+    | City |
+    | State |
+    | Zip_Code |
 
----
+    ---
 
-## Date_Dimension
+    ## Date_Dimension
 
-| Date_ID |
-| Date |
-| Month |
-| Year |
-| Day_of_Week |
+    | Date_ID |
+    | Date |
+    | Month |
+    | Year |
+    | Day_of_Week |
 
----
+    ---
+```
 
 6. Load Data
 
